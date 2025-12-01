@@ -1,1 +1,19 @@
-<p>receiver works!</p>
+<!-- angular_RxJS\src\app\components\receiver\receiver.html -->
+
+<div class="receiver-box">
+  <h2>Receiver Component</h2>
+  
+  <div class="message-display">
+    <label>Received Message:</label>
+    <p *ngIf="receivedMessage; else noMessage" class="message">
+      {{ receivedMessage }}
+    </p>
+    <ng-template #noMessage>
+      <p class="no-message">Waiting for message...</p>
+    </ng-template>
+  </div>
+  
+  <div class="history">
+    <small>Last update: {{ receivedMessage ? 'Just now' : 'Never' }}</small>
+  </div>
+</div>
