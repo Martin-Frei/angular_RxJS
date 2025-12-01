@@ -41,3 +41,16 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Log files
+*.log
+
+# Personal notes
+clean_structure.txt
+notes.txt

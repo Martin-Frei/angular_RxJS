@@ -1,0 +1,14 @@
+﻿portfolio/
+│
+│
+├── .vscode/
+│   ├── extensions.json
+│   ├── launch.json
+│   └── tasks.json
+├── public/
+│   └── favicon.ico
+└── src/
+    ├── app/
+    ├── index.html
+    ├── main.ts
+    └── styles.css
