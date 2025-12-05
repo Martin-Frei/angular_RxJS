@@ -1,59 +1,123 @@
-# AngularRxJS
+# Angular RxJS Communication Demo
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.0.
+A practical demonstration of component-to-component communication in Angular using RxJS BehaviorSubjects.
 
-## Development server
+## 🎯 About This Project
 
-To start a local development server, run:
+This project was created during my fullstack web development training at **Developer Akademie** to understand reactive programming with RxJS in Angular.
 
+## 🚀 Features
+
+### Two Parallel Data Streams
+
+**1. String Messages**
+- Simple text message communication
+- `BehaviorSubject<string>`
+- Real-time updates between sender and receiver
+
+**2. Form Data Collection**
+- User data collection (Name, Email, Age)
+- `BehaviorSubject<UserFormData[]>`
+- Persistent data array that grows with each submission
+
+## 🛠️ Technologies
+
+- Angular 19
+- RxJS
+- TypeScript
+- Standalone Components
+- FormsModule
+
+## 💻 Installation & Setup
 ```bash
+# Clone the repository
+git clone https://github.com/MartinBock1/angular-rxjs-communication-demo.git
+
+# Navigate to project folder
+cd angular-rxjs-communication-demo
+
+# Install dependencies
+npm install
+
+# Start development server
 ng serve
+
+# Open browser at http://localhost:4200
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 📚 Key Concepts Demonstrated
 
-## Code scaffolding
+### BehaviorSubject vs Subject
+- **BehaviorSubject** stores the latest value
+- New subscribers immediately receive the current state
+- Perfect for state management
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Implementation Highlights
+- ✅ Central service for state management
+- ✅ Component communication without parent-child relationships
+- ✅ Proper subscription cleanup (unsubscribe in ngOnDestroy)
+- ✅ Immutable state updates
+- ✅ Form validation
+- ✅ Type-safe interfaces
 
-```bash
-ng generate component component-name
+## 🔄 How It Works
+```
+┌─────────────────────────────────────┐
+│         Service Layer               │
+│  - BehaviorSubject<string>          │
+│  - BehaviorSubject<UserFormData[]>  │
+└─────────────────────────────────────┘
+           ↓         ↑
+    subscribe    next()
+           ↓         ↑
+┌──────────────┬──────────────┐
+│   Sender     │   Receivers  │
+│  Component   │  Components  │
+└──────────────┴──────────────┘
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
+## 📂 Project Structure
+```
+src/app/
+├── components/
+│   ├── sender/
+│   │   ├── sender.ts
+│   │   ├── sender.html
+│   │   └── sender.css
+│   ├── receiver/
+│   │   ├── receiver.ts
+│   │   ├── receiver.html
+│   │   └── receiver.css
+│   └── receiver-form-data/
+│       ├── receiver-form-data.ts
+│       ├── receiver-form-data.html
+│       └── receiver-form-data.css
+├── service.ts
+├── app.component.ts
+└── app.html
 ```
 
-## Building
+## 🎓 Learning Outcomes
 
-To build the project run:
+This project helped me understand:
+- How BehaviorSubject maintains state
+- The importance of unsubscribing from observables
+- Service-based architecture in Angular
+- Reactive programming patterns
+- Type-safe data handling with TypeScript
 
-```bash
-ng build
-```
+## 👨‍💻 Author
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+**Martin Bock**
+- GitHub: [@MartinFreimuth](https://github.com/Martin-Frei)
+- Location: Rosenheim, Bavaria, Germany
+- Training: Fullstack Developer at Developer Akademie (finishing March 2026)
+- Background: Career changer with 20 years business experience
 
-## Running unit tests
+## 📝 License
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+This is a learning project created for educational purposes.
 
-```bash
-ng test
-```
+---
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+*Part of my journey from business management to fullstack development* 🚀

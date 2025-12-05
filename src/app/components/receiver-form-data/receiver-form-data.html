@@ -1,0 +1,22 @@
+<!-- src\app\components\receiver-form-data\receiver-form-data.html -->
+
+<div class="form-data-display">
+  <h2>Receiver Component (Form Data)</h2>
+
+  <div class="data-list">
+    <label>Empfangene Formulardaten:</label>
+    <div *ngIf="formDataList.length > 0; else noData">
+      <div *ngFor="let user of formDataList" class="user-card">
+        <strong>{{ user.name }}</strong> - {{ user.email }} - {{ user.age }} Jahre
+      </div>
+    </div>
+
+    <ng-template #noData>
+      <p class="no-data">Empty Array, no Messages</p>
+    </ng-template>
+  </div>
+
+  <div class="history">
+    <small>Anzahl Einträge: {{ formDataList.length }}</small>
+  </div>
+</div>

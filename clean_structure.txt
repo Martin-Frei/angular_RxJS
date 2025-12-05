@@ -1,6 +1,8 @@
 ﻿portfolio/
 │
 │
+├── .angular/
+│   └── cache/
 ├── .vscode/
 │   ├── extensions.json
 │   ├── launch.json
