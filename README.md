@@ -6,6 +6,8 @@ A practical demonstration of component-to-component communication in Angular usi
 
 This project was created during my fullstack web development training at **Developer Akademie** to understand reactive programming with RxJS in Angular.
 
+🌐 **[Live Demo](https://martin-frei.github.io/angular-rxjs-demo/)**
+
 ## 🚀 Features
 
 ### Two Parallel Data Streams
